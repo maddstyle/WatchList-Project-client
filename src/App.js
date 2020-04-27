@@ -2,9 +2,12 @@ import React from "react";
 import axios from "axios";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import GlobalStyle from "./style/global";
+import Routes from "./Routes/index";
+import AuthLayout from "./components/_layouts/Auth/index";
 import Header from "./components/Navigation";
 import Dashboard from "./pages/Dashboard";
 import Main from "./pages/Main";
+import Signup from "./components/Signup/index";
 
 class App extends React.Component {
   state = {
@@ -41,8 +44,28 @@ class App extends React.Component {
       <>
         <BrowserRouter>
           <Header />
-          <Switch>
-            <Route path="/" exact render={Main} />
+          <Routes inventory={allProducts} />
+
+          {/* <Switch>
+            <Route
+              path="/"
+              exact
+              render={props => (
+                <AuthLayout>
+                  <Main {...props} />
+                </AuthLayout>
+              )}
+            />
+            <Route
+              path="/signup"
+              exact
+              render={props => (
+                <AuthLayout>
+                  <Signup {...props} />
+                </AuthLayout>
+              )}
+            />
+            />
             <Route
               path="/watches"
               render={props => <Dashboard {...props} inventory={allProducts} />}

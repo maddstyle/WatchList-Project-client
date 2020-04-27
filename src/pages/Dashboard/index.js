@@ -2,10 +2,10 @@ import React from "react";
 import { Container, ProductList } from "./styles";
 /**
  *
- * @param {inventory} destructuring from App.js
+//  * @param {inventory} destructuring from App.js
  */
 export default function Dashboard({ inventory }) {
-  console.log(inventory);
+ 
   return (
     <Container>
       <ProductList>

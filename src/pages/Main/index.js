@@ -1,5 +1,7 @@
 import React from "react";
+import { Container } from "./styles";
+import Signin from "../../components/Signin";
 
 export default function Main() {
-  return <div>I am the landing page</div>;
+  return <Container>hello world</Container>;
 }

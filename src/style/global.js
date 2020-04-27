@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import watch from "../assets/watch.jpg";
 /**
  *  @star * selects everything!
  */
@@ -12,7 +13,7 @@ export default createGlobalStyle`
 
   }
   body{
-    background: #F0f0F5;
+    background : #F0F0F5  70% top;
     -webkit-font-smoothing: antialiased;
   }
   body, input, button{
