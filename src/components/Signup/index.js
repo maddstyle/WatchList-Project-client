@@ -1,24 +1,27 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import axios from "axios";
+import history from "../../services/history";
 
 export default function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault();
     const response = await axios.post(`http://localhost:3001/createUser`, {
       name,
       email,
       password
     });
     console.log(response.data);
+    history.push("/");
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={e => handleSubmit(e)}>
         <input
           type="text"
           placeholder="name"

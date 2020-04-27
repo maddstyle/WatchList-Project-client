@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Redirect } from "react-router-dom";
 import AuthLayout from "../components/_layouts/Auth/index";
-
 export default function RouteWrapper({
   component: Component,
   isPrivate = false,
@@ -12,20 +11,20 @@ export default function RouteWrapper({
     if (storedToken) {
       return JSON.parse(storedToken);
     } else {
-      return [];
+      return null;
     }
   });
 
-  const auth = signed ? true : false;
+  useEffect(() => {
+    setSigned(signed);
+  }, [signed]);
 
-  if (!auth && isPrivate) {
+  if (!signed && isPrivate) {
     return <Redirect to="/" />;
   }
-
-  if (auth && !isPrivate) {
-    return <Redirect to="/watches" />;
-  }
-
+  // if (signed && !isPrivate) {
+  //   return <Redirect to="/watches" />;
+  // }
   return (
     <Route
       {...rest}
