@@ -44,6 +44,7 @@ class App extends React.Component {
     return (
       <>
         <Router history={history}>
+          <Header />
           <Routes inventory={allProducts} />
           <GlobalStyle />
         </Router>

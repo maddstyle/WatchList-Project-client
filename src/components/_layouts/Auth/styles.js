@@ -26,12 +26,9 @@ export const Content = styled.div`
       padding: 0 15px;
       color: #fff;
       margin: 0 0 10px;
-      &::placeholder: {
+      &::placeholder {
         color: rgba(255, 255, 255, 0.7);
       }
-      ${"" /* &:hover {
-        transform: translateY(10px);
-      } */}
     }
 
     button {
