@@ -1,6 +1,12 @@
-import React from "react";
-import { Wrapper } from "./styles";
+import React from 'react'
+import Header from '../../Navigation/index'
+import { Wrapper } from './styles'
 
 export default function DeafultLayout({ children }) {
-  return <Wrapper>{children}</Wrapper>;
+  return (
+    <>
+      <Header />
+      <Wrapper>{children}</Wrapper>
+    </>
+  )
 }

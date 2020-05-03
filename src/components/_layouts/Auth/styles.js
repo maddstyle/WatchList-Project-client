@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components'
+import { shade } from 'polished'
 
 export const Wrapper = styled.div`
   margin-top: 80px;
@@ -6,7 +7,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 export const Content = styled.div`
   width: 100%;
@@ -34,17 +35,19 @@ export const Content = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #3b9eff;
+      background: forestgreen;
       color: #fff;
       font-weight: bold;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
+      margin-bottom: 10px;
+      &:hover {
+        background: ${shade(0.2, '#228B22')};
+      }
     }
   }
-
   a {
     margin-top: 15px;
-    font-size: 16px;
   }
-`;
+`

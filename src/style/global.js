@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import watch from "../assets/watch.jpg";
+import { createGlobalStyle } from 'styled-components'
+import rolex_movement from '../assets/rolex_movement.svg'
 /**
  *  @star * selects everything!
  */
@@ -13,8 +13,10 @@ export default createGlobalStyle`
 
   }
   body{
-    background : #F0F0F5  70% top;
+    background: #F5F5F5;
+    /* background : #F0F0F5 url(${rolex_movement}) 70% top; */
     -webkit-font-smoothing: antialiased;
+
   }
   body, input, button{
     font: 16px sans-serif;
@@ -30,4 +32,4 @@ export default createGlobalStyle`
     cursor: pointer;
   }
 
-`;
+`
