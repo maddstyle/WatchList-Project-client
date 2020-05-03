@@ -6,15 +6,15 @@ export default function Header() {
   return (
     <Container>
       <div className='logo'>WatchList</div>
-       <ul className="nav links">
+       <ul>
          <li>
-           <Link to="/" className="link">Home</Link>
+           <Link to="/">Home</Link>
          </li>
          <li>
-           <Link to="/watches" className="link">Watches</Link>
+           <Link to="/watches">Watches</Link>
          </li>
          <li>
-           <Link to="/contact" className="link">Contact</Link>
+           <Link to="/contact">Contact</Link>
          </li>
        </ul>
     </Container>
