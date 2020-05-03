@@ -10,14 +10,14 @@ export default function Signin() {
     if (storedToken) {
       return JSON.parse(storedToken)
     } else {
-      return []
+      return null
     }
   })
   async function handleSubmit(e) {
     e.preventDefault()
     const response = await axios.post(`http://localhost:3001/session`, {
       email,
-      password
+      password,
     })
     const { user, token } = response.data
     setToken(token)
@@ -43,7 +43,8 @@ export default function Signin() {
         />
         <button>Submit</button>
       </form>
+
       <Link to="/signup">Create Account</Link>
     </>
-   );
-  }
+  )
+}

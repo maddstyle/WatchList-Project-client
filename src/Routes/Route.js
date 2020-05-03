@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { Route, Redirect } from "react-router-dom";
-import AuthLayout from "../components/_layouts/Auth/index";
-import DefaultLayout from "../components/_layouts/Default/index";
+import React, { useState, useEffect } from 'react'
+import { Route, Redirect } from 'react-router-dom'
+import AuthLayout from '../components/_layouts/Auth/index'
+import DefaultLayout from '../components/_layouts/Default/index'
 
 export default function RouteWrapper({
   component: Component,
@@ -9,36 +9,38 @@ export default function RouteWrapper({
   ...rest
 }) {
   const [signed, setSigned] = useState(() => {
-    const storedToken = localStorage.getItem("watchstore");
+    const storedToken = localStorage.getItem('watchstore')
     if (storedToken) {
-      return JSON.parse(storedToken);
+      return JSON.parse(storedToken)
     } else {
-      return null;
+      return null
     }
-  });
+  })
 
   useEffect(() => {
-    setSigned(signed);
-  }, [signed]);
+    setSigned(signed)
+  }, [signed])
 
-  if (!signed && isPrivate) {
-    return <Redirect to="/" />;
+  const validated = !!signed
+
+  if (!validated && isPrivate) {
+    return <Redirect to="/" />
   }
 
-  if (signed && !isPrivate) {
-    return <Redirect to="/watches" />;
+  if (validated && !isPrivate) {
+    return <Redirect to="/watches" />
   }
 
-  const Layout = signed ? DefaultLayout : AuthLayout;
+  const Layout = validated ? DefaultLayout : AuthLayout
 
   return (
     <Route
       {...rest}
-      render={props => (
+      render={(props) => (
         <Layout>
           <Component {...props} {...rest} />
         </Layout>
       )}
     />
-  );
+  )
 }

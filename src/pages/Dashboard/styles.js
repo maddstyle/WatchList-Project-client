@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 /**
  * @sfc creates states functional
  * @cc creates class component
@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-`;
+`
 
 export const ProductList = styled.ul`
   display: grid;
@@ -40,5 +40,16 @@ export const ProductList = styled.ul`
       font-weight: bold;
       margin: 5px 0 20px;
     }
+    div {
+      margin-top: 5px;
+      display: flex;
+      justify-content: space-evenly;
+      button {
+        border: none;
+      }
+      a {
+        color: #000000;
+      }
+    }
   }
-`;
+`
