@@ -4,7 +4,7 @@ import Route from "./Route";
 import Main from "../pages/Main";
 import Dashboard from "../pages/Dashboard";
 import Watches from "../pages/Watches/index";
-import UpdateWatch from "../pages/Watches/upate";
+import UpdateWatch from "../pages/Watches/update";
 import Signin from "../components/Signin/index";
 import Signup from "../components/Signup/index";
 

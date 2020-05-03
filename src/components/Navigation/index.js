@@ -5,9 +5,18 @@ import { Container } from "./styles";
 export default function Header() {
   return (
     <Container>
-      <Link to="/">Home</Link>
-      <Link to="/watches">Watches</Link>
-      <Link to="/contact">Contact</Link>
+      <div className='logo'>WatchList</div>
+       <ul className="nav links">
+         <li>
+           <Link to="/" className="link">Home</Link>
+         </li>
+         <li>
+           <Link to="/watches" className="link">Watches</Link>
+         </li>
+         <li>
+           <Link to="/contact" className="link">Contact</Link>
+         </li>
+       </ul>
     </Container>
   );
 }
